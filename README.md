@@ -47,9 +47,10 @@ GIF created with ScreenToGif
 
 ## Notes
 
-With this app, I had challenges when randomizing the cards using the 'Next' button. I was able to randomize them but when the web app first rendered nothing was showing. I had to set the original set first and once all cards have been played, the cards show up randomized. 
+With this app, I had challenges when randomizing the cards using the 'Next' button. I was able to randomize them, but when the web app first rendered, nothing was showing. I had to set the original set first, and once all cards have been played, the cards show up randomized. 
 
-I also had trouble with making the cards flip when you clicked on it to see the answer. There was a lot of CSS that needed to be applied to make the transition smooth. When I first made it happen, you would be able to see the answer for the next card when you hit the "Next" button. I used setTimeout to give the application time to show the next question without exposing the answer. 
+I also had trouble with making the cards flip when you clicked on them to see the answer. A significant amount of CSS needed to be applied to ensure a smooth transition. When I first implemented it, you would be able to see the answer for the next card when you clicked the "Next" button. I used setTimeout to give the application time to show the next question without exposing the answer.
+
 
 ## License
 
