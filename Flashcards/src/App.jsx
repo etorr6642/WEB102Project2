@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 //question about the first 151 pokemon
 const questions = [
   {
@@ -99,13 +99,25 @@ const questions = [
   }
 ];
 
-
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
 
 const App = () => {
   // State variables
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [flip, setFlip] = useState(false);
+  const [shuffledQuestions, setShuffledQuestions] = useState([]);
+
+  useEffect(() => {
+    setShuffledQuestions(questions);
+    setCurrentQuestion(0);
+  }
+  , []);
+
+
+  
+  
 
 //function to flip the card and show the answer
   const flipCard = () => {
@@ -122,33 +134,36 @@ const App = () => {
         {/* Description */}
         <p>How well do you know your pokemon? Test your knowledge of the original 151 Pokemon here!</p>
         {/* Number of cards in the deck */}
-        <p>Number of cards: {questions.length} </p>
+        <p>Number of cards: {questions.length+1} </p>
       </div>
 
-      {/* button that displays a random question and shows the answer when clicked */}
-      {/* <button className="card" onClick={flipCard}>
-        <h3>{showAnswer ? questions[currentQuestion].answer : questions[currentQuestion].question}</h3>
-      </button> */}
+      {shuffledQuestions[currentQuestion] && (
 
-      {/* create a card that looks like it is flipping when clicked */}
-      <div className ='card-flip-container' onClick={() => flipCard()}>
-        <div className={`card-inner ${showAnswer ? 'flipped' : ''}`}>
-          <div className="front card">
-            <h3>{questions[currentQuestion].question}</h3>
-          </div>
-          <div className="back card">
-            <div className="answer">
-              <h3>{questions[currentQuestion].answer}</h3>
-              <img src={questions[currentQuestion].image} alt={questions[currentQuestion].answer} />
+        // {/* create a card that looks like it is flipping when clicked */}
+        <div className ='card-flip-container' onClick={() => flipCard()}>
+          {/* inner card that determins if it is flipped or not */}
+          <div className={`card-inner ${showAnswer ? 'flipped' : ''}`}>
+            {/* front card information- question */}
+            <div className="front card">
+              <h3>{shuffledQuestions[currentQuestion].question}</h3>
+            </div>
+            {/* Back card information - answer */}
+            <div className="back card">
+              <div className="answer">
+                <h3>{shuffledQuestions[currentQuestion].answer}</h3>
+                <img src={shuffledQuestions[currentQuestion].image} alt={shuffledQuestions[currentQuestion].answer} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
+      {/* buttons to go to next question or previous question */}
       <div className='nextPrevious'>
          {/* button to go to the previous question */}
         <button className="prev" onClick={() => {
           setShowAnswer(false);
+          // set a timeout to make it look like the card is flipping
           setTimeout(() => {
             setCurrentQuestion((currentQuestion - 1 + questions.length) % questions.length);
           },200)
@@ -159,8 +174,16 @@ const App = () => {
         {/* button to go to the next question */}
         <button className="next" onClick={() => {
           setShowAnswer(false);
+          // set a timeout to make it look like the card is flipping
           setTimeout(() => {
-          setCurrentQuestion((currentQuestion + 1) % questions.length);
+            if(currentQuestion+1<shuffledQuestions.length){
+              setCurrentQuestion(currentQuestion + 1);
+            }
+            else{
+              const reshuffle = [...questions].sort(() => Math.random() - 0.5);
+              setShuffledQuestions(reshuffle);
+              setCurrentQuestion(0);  
+            }
           }, 200)
           
         }}>

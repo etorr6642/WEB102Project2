@@ -1,17 +1,17 @@
-# Web Development Project 2 - *Name of App Here*
+# Web Development Project 2 - The Ultimate Pokemon Trainer
 
-Submitted by: **Your Name Here**
+Submitted by: **Edward Torres**
 
-This web app: **insert description**
+This web app: **This web app tests the user's knowledge on Pokemon in the Kanto Region**
 
-Time spent: **X** hours spent in total
+Time spent: **6** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
 
-- [ ] **The app displays the title of the card set, a short description, and the total number of cards**
+- [x] **The app displays the title of the card set, a short description, and the total number of cards**
   - [x] Title of card set is displayed 
   - [x] A short description of the card set is displayed 
   - [x] A list of card pairs is created
@@ -56,7 +56,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2025] [Edward Torres]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
