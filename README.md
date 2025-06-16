@@ -1,10 +1,10 @@
-# Web Development Project 2 - The Ultimate Pokemon Trainer
+# Web Development Project 2 - The Ultimate Pokemon Trainer - Kanto Region
 
 Submitted by: **Edward Torres**
 
 This web app: **This web app tests the user's knowledge on Pokemon in the Kanto Region**
 
-Time spent: **6** hours spent in total
+Time spent: **7** hours spent in total
 
 ## Required Features
 

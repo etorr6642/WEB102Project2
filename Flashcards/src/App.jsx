@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
-//question about the first 151 pokemon
+//question about the first 151 Pokémon
 const questions = [
   {
     question: "What is the very first Pokémon in the Pokédex?",
@@ -130,9 +130,10 @@ const App = () => {
       {/* header information */}
       <div className="header">
         {/* title */}
-        <h1 className='=title'>The Ultimate Pokemon Trainer</h1>
+        <h1 className='=title'>The Ultimate Pokémon Trainer</h1>
+        <h2>Kanto Region</h2>
         {/* Description */}
-        <p>How well do you know your pokemon? Test your knowledge of the original 151 Pokemon here!</p>
+        <p>How well do you know your Pokémon? Test your knowledge of the original 151 Pokémon here!</p>
         {/* Number of cards in the deck */}
         <p>Number of cards: {questions.length+1} </p>
       </div>
